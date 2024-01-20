@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'pages/home.dart';
+import 'package:todo_app/pages/signup_page.dart';
+import 'pages/home_page.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart' as firebase_auth;
 
@@ -29,18 +30,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'TO-DO App',
-      home: Scaffold(
-          appBar: AppBar(
-            title: Text("SignUP"),
-          ),
-          body: Center(
-            child: ElevatedButton(
-                onPressed: () {
-                  signUp();
-                },
-                child: Text("SignUp")),
-          )),
-      routes: {"/home": (context) => Home()},
+      
+      routes: {
+        "/" :(context)=> SignUpPage(),
+        "/home": (context) => Home(),
+        },
     );
   }
 }
